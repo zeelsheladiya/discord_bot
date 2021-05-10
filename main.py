@@ -18,13 +18,6 @@ def get_quote():
 
 sad_words = ["sad", "depressed", "unhappy", "angry", "miserable"]
 
-abuse_words = ["fuck","loda", "lund", "sale", "chuthiya", "chuthiye","harami","asshole","mc","bc","bosdk","bhosdike"]
-
-abuse_mess = [
-  "don't use this type of words in this server",
-  "Don't use this type of words , respect all",
-]
-
 starter_encouragements = [
   "Cheer up!",
   "Hang in there.",
@@ -68,9 +61,6 @@ async def on_message(message):
         await message.channel.send(random.choice(starter_encouragements))
         quote = get_quote()
         await message.channel.send(quote)
-
-    if any(word in msg for word in abuse_words):
-        await message.channel.send(random.choice(abuse_mess))
 
 
 keep_alive() #this is for non sleep server runing process do not delete this.
